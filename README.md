@@ -35,4 +35,4 @@ Please enter your Github organization name: My_Organization
 Please enter your Github token : My_Personal_Access_Token
 Do you want store this inforemation for future usage? ([Y]es, [N]o)
 ~~~
-As you can see, after gathering the required information, script asks you if you want your data to be saved or not. If you want so, the script stores your data in `.profile_git` file. Now the script si going to do the rest for you as it was [mentioned before](https://github.com/PS-Professional/Organization-Backup#what-is-this-project).
+As you can see, after gathering the required information, script asks you if you want your data to be saved or not. If you want so, the script stores your data in `.profile_git` file. Now the script is going to do the rest for you as it was [mentioned before](https://github.com/PS-Professional/Organization-Backup#what-is-this-project).
