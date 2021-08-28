@@ -23,7 +23,7 @@ To run the script, use this command:
 ./repo-backup.sh
 ```
 At first usage of this script, it will ask you your Githun username, organization name (Note that both are case sensitive!) and your personal access token. Let's take a look at example below:
-~~~ shell
+~~~
 ╭─parsa@PS-Pro ~/Organization-Backup
 ╰─$ ./repo-backup.sh
 Welcome to Organization Backup scrpit!
@@ -35,4 +35,4 @@ Please enter tour Github organization name: My_Organization
 Please enter tour Github token : My_Personal_Access_Token
 Do you want store this inforemation for future usage? ([Y]es, [N]o)
 ~~~
-As you can see, after gathering information script asks you if you condiser to save your data or not. If you agree with that, it will store your data in `.profile_git` file. Now the script will do rest of works for you as it [mentioned before](https://github.com/PS-Professional/Organization-Backup#what-is-this-project?)
+As you can see, after gathering information script asks you if you condiser to save your data or not. If you agree with that, it will store your data in `.profile_git` file. Now the script will do rest of works for you as it [mentioned before](https://github.com/PS-Professional/Organization-Backup#what-is-this-project)
