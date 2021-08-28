@@ -29,10 +29,10 @@ function init(){
 		  elif [[ $data_verify = 'no' ]] || [[ $data_verify = 'n' ]] || [[ $data_verify = 'N' ]]
 	  	then
 		  	echo "Don't worry. We'll fix it! :)" ; rm .profile_git ; sleep 1
-        read -p 'Please enter your Github username: ' user
-        read -p 'Please enter your Github organization name: ' organization
-        read -p 'Please enter your Github token : ' token
-        read -p 'Do you want store this inforemation for future usage? ([Y]es, [N]o) ' store
+        read -p 'Please enter your GitHub username: ' user
+        read -p 'Please enter your GitHub organization name: ' organization
+        read -p 'Please enter your GitHub token : ' token
+        read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
         if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
 	    	then
 		  	  echo $user:$organization:$token > .profile_git ; sleep 1 ; State=0
@@ -50,13 +50,13 @@ function init(){
     done
   else
     echo This script need your information to perform backup task ; sleep 1 
-    read -p 'Please enter your Github username: ' user
-    read -p 'Please enter your Github organization name: ' organization
-    read -p 'Please enter your Github token : ' token
+    read -p 'Please enter your GitHub username: ' user
+    read -p 'Please enter your GitHub organization name: ' organization
+    read -p 'Please enter your GitHub token : ' token
     State=1
     while [[ $State = 1 ]]
     do
-      read -p 'Do you want store this inforemation for future usage? ([Y]es, [N]o) ' store
+      read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
 		  if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
 		  then
 		  	echo $user:$organization:$token > .profile_git ; sleep 1 ; State=0
