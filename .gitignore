@@ -1,0 +1,9 @@
+# Profile file
+.profile_git
+
+# Archive files
+*.tar.xz
+
+#Temprory files and folders
+tmp/
+tmp
