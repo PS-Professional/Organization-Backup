@@ -10,7 +10,7 @@ Developed by PS-Professional
 
 ## What is this project?
 
-This project will clone and craete backup from your organization repositories. First The `repo-backup.sh` script makes a request to Github API and get data about projects using your credits. Then, it will search through requested data and use `ssh_url` variable to clone them into `./tmp` directory using SSH. Then, it will start archive and compress (using XZ) each project. After that, it will again archive and compress projects into a single file. After completing the previous steps, the script will remove last level files to keep your storage clean and free. The final file name would be `GithubRepos([day][month-abbrviation][year]).tar.xz`
+This project will clone and craete backup from your organization repositories. First The `repo-backup.sh` script makes a request to Github API and gets data about projects using your credits. Then, it will search through requested data and uses `ssh_url` variable to clone them into `./tmp` directory using SSH. Then, it will start archive and compress (using XZ) each project. After that, it will again archive and compress projects into a single file. After completing the previous steps, the script will remove last level files to keep your storage clean and free. The final file name would be `GithubRepos([day][month-abbrviation][year]).tar.xz`
 
 ## Requirements of this project
 
