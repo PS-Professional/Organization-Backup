@@ -24,25 +24,25 @@ function init(){
       read -p 'Are these data true? ([Y]es, [N]o) ' data_verify
       if [[ $data_verify = 'yes' ]] || [[ $data_verify = 'y' ]] || [[ $data_verify = 'Y' ]]
 		  then
-		  	echo "Got it!" ; sleep 1
+		    echo "Got it!" ; sleep 1
         State=0
 		  elif [[ $data_verify = 'no' ]] || [[ $data_verify = 'n' ]] || [[ $data_verify = 'N' ]]
-	  	then
-		  	echo "Don't worry. We'll fix it! :)" ; rm .profile_git ; sleep 1
+	    then
+		    echo "Don't worry. We'll fix it! :)" ; rm .profile_git ; sleep 1
         read -p 'Please enter your GitHub username: ' user
         read -p 'Please enter your GitHub organization name: ' organization
         read -p 'Please enter your GitHub token : ' token
         read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
         if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
-	    	then
+	      then
 		  	  echo $user:$organization:$token > .profile_git ; sleep 1 ; State=0
-	    	elif [[ $store = 'no' ]] || [[ $store = 'n' ]] || [[ $store = 'N' ]]
-	    	then
-		    	echo "OK!" ; sleep 1 ; State=0
-	    	else
-		    	echo "Operation not specified!" ; sleep 0.5
-		    	echo "Please try again!" ; sleep 0.5
-	    	fi
+	      elif [[ $store = 'no' ]] || [[ $store = 'n' ]] || [[ $store = 'N' ]]
+	      then
+		      echo "OK!" ; sleep 1 ; State=0
+	      else
+		      echo "Operation not specified!" ; sleep 0.5
+		      echo "Please try again!" ; sleep 0.5
+	      fi
       else
         echo "Operation not specified!" ; sleep 0.5
         echo "Please try again!" ; sleep 0.5
