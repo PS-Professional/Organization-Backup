@@ -19,10 +19,13 @@ Before using this project, make sure your GitHub account meet these requirements
 ##  How to use the script?
 
 To run the script, use this command:
+
 ```
 ./repo-backup.sh
 ```
+
 By running the script for the first time, you will be asked to enter you your GitHub username, organization name (Bear in mind that both are case sensitive!) and your personal access token. Now, Let's take a look at following example:
+
 ~~~
 ╭─parsa@PS-Pro ~/Organization-Backup
 ╰─$ ./repo-backup.sh
@@ -35,4 +38,5 @@ Please enter your GitHub organization name: My_Organization
 Please enter your GitHub token : My_Personal_Access_Token
 Do you want store this information for future usage? ([Y]es, [N]o)
 ~~~
+
 As you can see, after gathering the required information, the script asks you if you want your data to be saved or not. If you want so, the script stores your data in `.profile_git` file. By this moment,  the script is going to do the rest for you, just as [mentioned before](https://github.com/PS-Professional/Organization-Backup#what-is-this-project).
