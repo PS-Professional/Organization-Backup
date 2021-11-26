@@ -8,6 +8,27 @@
 #
 
 #Give input from user
+function get_store_data(){
+    read -p 'Please enter your GitHub username: ' user
+    read -p 'Please enter your GitHub organization name: ' organization
+    read -p 'Please enter your GitHub token : ' token
+    GSstate=1
+    while [[ $GSstate = 1 ]]
+    do
+        read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
+        if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
+		then
+		    echo $user:$organization:$token > .profile_git ; sleep 1 ; GSstate=0
+		elif [[ $store = 'no' ]] || [[ $store = 'n' ]] || [[ $store = 'N' ]]
+		then
+		    echo "OK!" ; sleep 1 ; GSstate=0			
+		else
+		  	echo "Operation not specified!" ; sleep 0.5
+		  	echo "Please try again!" ; sleep 0.5
+		fi
+    done
+}
+
 function init(){
     if [[ -f .profile_git ]]
     then
@@ -25,24 +46,11 @@ function init(){
             if [[ $data_verify = 'yes' ]] || [[ $data_verify = 'y' ]] || [[ $data_verify = 'Y' ]]
             then
                 echo "Got it!" ; sleep 1
-            State=0
+                State=0
             elif [[ $data_verify = 'no' ]] || [[ $data_verify = 'n' ]] || [[ $data_verify = 'N' ]]
             then
                 echo "Don't worry. We'll fix it! :)" ; rm .profile_git ; sleep 1
-                read -p 'Please enter your GitHub username: ' user
-                read -p 'Please enter your GitHub organization name: ' organization
-                read -p 'Please enter your GitHub token : ' token
-                read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
-                if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
-                then
-                    echo $user:$organization:$token > .profile_git ; sleep 1 ; State=0
-                elif [[ $store = 'no' ]] || [[ $store = 'n' ]] || [[ $store = 'N' ]]
-                then
-                    echo "OK!" ; sleep 1 ; State=0
-                else
-                    echo "Operation not specified!" ; sleep 0.5
-                    echo "Please try again!" ; sleep 0.5
-                fi
+                get_store_data ; State=0
             else
                 echo "Operation not specified!" ; sleep 0.5
                 echo "Please try again!" ; sleep 0.5
@@ -50,24 +58,7 @@ function init(){
         done
     else
         echo This script need your information to perform backup task ; sleep 1 
-        read -p 'Please enter your GitHub username: ' user
-        read -p 'Please enter your GitHub organization name: ' organization
-        read -p 'Please enter your GitHub token : ' token
-        State=1
-        while [[ $State = 1 ]]
-        do
-            read -p 'Do you want store this information for future usage? ([Y]es, [N]o) ' store
-            if [[ $store = 'yes' ]] || [[ $store = 'y' ]] || [[ $store = 'Y' ]]
-		    then
-		        echo $user:$organization:$token > .profile_git ; sleep 1 ; State=0
-		    elif [[ $store = 'no' ]] || [[ $store = 'n' ]] || [[ $store = 'N' ]]
-		    then
-		  	    echo "OK!" ; sleep 1 ; State=0			
-		    else
-		  	    echo "Operation not specified!" ; sleep 0.5
-		  	    echo "Please try again!" ; sleep 0.5
-		    fi
-        done
+        get_store_data
     fi
 }
 
